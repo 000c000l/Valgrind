@@ -4,8 +4,10 @@ Valgrind is a programming tool for memory debugging, memory leak detection, and 
 
 
 Requirements:
-  lex
-  valgrind
+
+  1.lex
+  
+  2.valgrind
   
   
 How To Use:

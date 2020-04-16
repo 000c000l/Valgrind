@@ -6,6 +6,7 @@
     using namespace std;
     bool declarationFlag=0;
     vector<string> storeVariables;
+    int count=0;
 %}
 variable [a-zA-Z][A-Za-z0-9]*
 dataType "int"|"float"|"char"
@@ -31,7 +32,8 @@ space " "
         for(auto i:storeVariables){
             int a=i.find("["),b=i.find("]");
             string s=i.substr((int64_t)0,a);
-            cout<<"int newVar;\nnewVar="<<s<<"[0];\n"<<s<<"[0]=newVar;";
+            cout<<"int newVar"<<count<<";\nnewVar"<<count<<"="<<s<<"[0];\n"<<s<<"[0]=newVar"<<count<<";";
+            count++;
         }
         storeVariables.clear();
         declarationFlag=0;

@@ -4,11 +4,7 @@ int main(){
 int newVar;
 newVar=a[0];
 a[0]=newVar;
- a[0]=0;
-
- a[11]=6;
-
- printf("hello\n");
+ a[10]=2;
 
  return 0;
 

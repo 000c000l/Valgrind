@@ -1,10 +1,8 @@
-newExcutable: modify
-	gcc test.c -o test | gcc newTest.c -o newTest
 modify: executable
-	./a.out <test.c >newTest.c
+	./a.out <$(src) >$(dest)
 executable: lex.yy.c
 	g++ lex.yy.c
-lex.yy.c: test.l
-	lex test.l
+lex.yy.c: src/conf.l
+	lex src/conf.l
 clean:
 	rm -rf lex.yy.c a.out test newTest

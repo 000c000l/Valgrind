@@ -1,7 +1,5 @@
-newExcutable: modify
-	gcc $(file1) -o $(file2) | gcc $(file3) -o $(file4)
 modify: executable
-	./a.out <$(file1) >$(file3)
+	./a.out <$(src) >$(dest)
 executable: lex.yy.c
 	g++ lex.yy.c
 lex.yy.c: src/conf.l

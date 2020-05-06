@@ -13,9 +13,9 @@ Requirements:
 How To Use:
   1. run INSTALL
   
-  2. open .bashrc
-  
-      a. add "export VALGRIND_HOME='valgrind location' "
+  2. open .bashrc:
+
+    a. add "export VALGRIND_HOME='valgrind location' "
       
       b. add "source $VALGRIND_HOME/src/commands.sh;"
       

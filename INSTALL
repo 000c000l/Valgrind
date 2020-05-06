@@ -1,0 +1,5 @@
+#!/bin/bash
+
+lex src/conf.l
+g++ lex.yy.c -o valgrind_modified
+rm -rf lex.yy.c

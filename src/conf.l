@@ -17,7 +17,8 @@ space " "
 pointer "*"
 %%
 {dataType}{space} {
-    cout<<yytext;
+    // cout<<yytext;
+    fprintf(yyout,"%s",yytext);
     declarationFlag=1;
     saveDataType=string(yytext);
 };
@@ -27,23 +28,28 @@ pointer "*"
         int starting=s.find("[");
         int ending=s.find("]");
         string newString=s.substr(starting+1,ending-starting-1);
-        int size=stoi(newString);
+        // int size=stoi(newString);
         string variableName=s.substr(0,starting);
-        cout<<"*"<<variableName<<"=("<<saveDataType<<"*)malloc(sizeof("<<saveDataType<<")*"<<size<<")";
+        string output_string="*"+variableName+"=("+saveDataType+"*)malloc(sizeof("+saveDataType+")*"+newString+")";
+        fprintf(yyout,"%s",output_string.c_str());
     }
     else{
-        cout<<yytext;
+        // cout<<yytext;
+        fprintf(yyout,"%s",yytext);
     }
 };
 {colon} {
-    cout<<yytext<<"\n";
+    // cout<<yytext<<"\n";
+    fprintf(yyout,"%s",yytext);
     declarationFlag=0;
 };
 {space}* {
-    cout<<" ";
+    // cout<<" ";
+    fprintf(yyout," ");
 };
 . {
-    cout<<yytext;
+    // cout<<yytext;
+    fprintf(yyout,"%s",yytext);
 }
 %%
 
@@ -51,5 +57,15 @@ int yywrap(){
 
 }
 int main(int argc,char **argv){
-    yylex();
+    FILE *file1,*file2;
+    file1=fopen(argv[1],"r");
+    file2=fopen(argv[2],"w");
+    if(!file1||!file2){
+        cout<<"No file Found"<<endl;
+    }
+    else{
+        yyin=file1;
+        yyout=file2;
+        yylex();
+    }
 }

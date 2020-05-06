@@ -11,6 +11,11 @@ Requirements:
   
   
 How To Use:
-  1. run make src="(main C file)" dest="(modified C file)".
-  2. make the executable for modified C file.
-  3. run valgrind --leak-check=yes executable arg1 arg2.
+  1. run INSTALL
+  2. open .bashrc
+      a. add "export VALGRIND_HOME='valgrind location' "
+      b. add "source $VALGRIND_HOME/src/commands.sh;"
+  3. now you can use valgrind_modified command from terminal
+      syntax:
+            valgrind_modified input_file output_file
+      

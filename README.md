@@ -18,6 +18,8 @@ How To Use:
     a. add "export VALGRIND_HOME='valgrind location' "
       
     b. add "source $VALGRIND_HOME/src/commands.sh;"
+    
+    c. then load the .bashrc by running "source ~/.bashrc"
       
   3. now you can use valgrind_modified command from terminal
       

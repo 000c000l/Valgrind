@@ -21,7 +21,8 @@ Requirements:
       
       4. Run "make install"(Run it as root)
       
-      5. Test your installation with "valgrind ls -l". If it bombs with the list of  complaints the contact us at cs17b017@iittp.ac.in
+      5. Test your installation with "valgrind ls -l". 
+      If it bombs with then list of complaints the contact us at cs17b017@iittp.ac.in
   
   
 How To Install:
